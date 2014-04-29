@@ -1,0 +1,19 @@
+<html>
+        <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <link href="/beta.css" rel="stylesheet" type="text/css">
+        <title>端口转发,http隧道</title>
+<head>
+<body>
+<h2>端口转发,http隧道</h2>
+<p></p>
+<p>场景：C能主动访问S，但S无法主动访问到C。</p>
+<p>目的：在S上访问到C上的Web服务，端口8080。</p>
+<p>思路：C主动与S建立socket连接，之后S通过此socket来访问C上的服务。</p>
+<p>首先在S上监听2个端口s1和s2，C主动连接(S,s1)，socket建立成功之后，在S上访问(S,s2), S将(S,s2)收到的数据转发给(S,s1)，即通过之前C和S建立的连接，C将接收到的数据发送给C上的Web服务，然后将接收到的数据通过C和S之间的连接发送过去，S(S,s1)将接收到的数据发送给(S,s2)，最终我们得到了数据。</p>
+<p><script src=https://gist.github.com/JackieZhang/11254282.js></script></p>
+<p>Last Update: 2014-04-29</p>
+<div style="display:none;">
+        <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1000346843'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1000346843%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div></body>
+</html>
