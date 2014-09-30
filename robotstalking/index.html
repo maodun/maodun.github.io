@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>Two Robots Talking</title>
+</head>
+<body>
+<h1>Tow Robots Talking</h1>
+<table  border="1" >
+<tr>
+<td width="150px" valign="top">
+Robot:
+</td><td width="190px" valign="top">
+机器人:
+</td></tr>
+
+<tr>
+<td width="150px" valign="top">
+<div id='res'></div>
+</td><td width="190px" valign="top">
+<div id='res2'></div>
+</td></tr>
+</table>
+<script>
+a="--Good Morning.<br>--How are you?<br>--Me too.<br>--说点中文怎么样？";
+b="--Good Morning.<br>--Fine. Thank you. And you?.<br>--OK. Let's Roll.<br>--好啊。再见！";
+
+function abc(st,maxlen,len,id){
+if(len <= maxlen){
+document.getElementById(id).innerHTML=st.substr(0,len);
+setTimeout("abc(\""+st+"\","+maxlen+','+(len+1)+",'"+id+"')",Math.ceil(Math.random()*1000));
+}
+}
+abc(a,a.length,0,'res');
+setTimeout(function(){abc(b,b.length,0,'res2');},2000);
+</script>
+</body>
+</html>
