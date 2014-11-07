@@ -11,8 +11,20 @@
 　　
 <body>
 
-<h2>矛盾攻防实验室</h2>
+<h2 id="tit">矛盾攻防实验室</h2>
 <!-- contact me if you can. b21ncGRydiN=nbWFpbC5jb20= -->
+
+<script>
+a="Now You See Me";
+
+function abc(st,maxlen,len,id){
+if(len <= maxlen){
+document.getElementById(id).innerHTML=st.substr(0,len);
+setTimeout("abc(\""+st+"\","+maxlen+','+(len+1)+",'"+id+"')",Math.ceil(Math.random()*800));
+}
+}
+setTimeout(function(){abc(a,a.length,0,'tit');},2000);
+</script>
 
 
 <ul>
