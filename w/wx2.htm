@@ -15,7 +15,7 @@ WeixinApi.ready(function(Api) {
         "appId": "", // 服务号可以填写appId
         "imgUrl" : 'http://192.168.1.4/f.ico',
         //"link" : 'http://tcp.im?test=stat&'+Math.random(),
-		"link" : 'javascript:alert(1)//',
+		"link" : "javascript:alert(1)\/\/#",
         "desc" : '测试一下',
         "title" : "我是标题"
     };
@@ -43,7 +43,7 @@ WeixinApi.ready(function(Api) {
         // 分享成功
         confirm : function(resp) {
             // 分享成功了，我们是不是可以做一些分享统计呢？
-            //alert("分享成功，msg=" + resp.err_msg);
+            alert("分享成功，msg=" + resp.err_msg);
         } /*,
         // 整个分享过程结束
         all : function(resp,shareTo) {
